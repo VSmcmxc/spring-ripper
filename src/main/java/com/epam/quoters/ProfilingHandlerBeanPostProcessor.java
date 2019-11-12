@@ -18,8 +18,8 @@ public class ProfilingHandlerBeanPostProcessor implements BeanPostProcessor {
 
     public ProfilingHandlerBeanPostProcessor() throws Exception {
         MBeanServer platformMBeanServer = ManagementFactory.getPlatformMBeanServer();
-        platformMBeanServer.registerMBean(controller, new ObjectName("profiling", "name", "controller"))
-        
+        platformMBeanServer.registerMBean(controller, new ObjectName("profiling", "name", "controller")); 
+
     }
 
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
