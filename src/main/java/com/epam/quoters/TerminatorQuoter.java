@@ -3,7 +3,7 @@ package com.epam.quoters;
 import javax.annotation.PostConstruct;
 
 @Profiling
-@DeprecatedClass( newImpl = T1000.class)
+@DeprecatedClass(newImpl = T1000.class)
 public class TerminatorQuoter implements Quoter {
 
 
@@ -12,8 +12,12 @@ public class TerminatorQuoter implements Quoter {
 
     private String message;
 
+    public void setRepeat(int repeat) {
+        this.repeat = repeat;
+    }
+
     @PostConstruct
-    public void init(){
+    public void init() {
         System.out.println("Phase 2");
         System.out.println(repeat);
     }
