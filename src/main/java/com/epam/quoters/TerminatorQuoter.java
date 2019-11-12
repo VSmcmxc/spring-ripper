@@ -1,5 +1,8 @@
 package com.epam.quoters;
 
+import javax.annotation.PostConstruct;
+
+@Profiling
 public class TerminatorQuoter implements Quoter {
 
 
@@ -7,6 +10,16 @@ public class TerminatorQuoter implements Quoter {
     private int repeat;
 
     private String message;
+
+    @PostConstruct
+    public void init(){
+        System.out.println("Phase 2");
+        System.out.println(repeat);
+    }
+
+    public TerminatorQuoter() {
+        System.out.println("Phase 1");
+    }
 
     public void setMessage(String message) {
         this.message = message;
